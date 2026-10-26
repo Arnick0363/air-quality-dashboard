@@ -1,0 +1,445 @@
+{
+  "period": {
+    "start": "2013-03-01 00:00:00",
+    "end": "2017-02-28 23:00:00",
+    "rows": 420768,
+    "stations": 12,
+    "city_rule": "城市日至少 8 个站点有有效日值",
+    "valid_day_rule": "站点日至少 18 个有效小时"
+  },
+  "cleaning": {
+    "rows_in": 420768,
+    "rows_out": 420768,
+    "interp_limit_hours": 6,
+    "missing_rate_before_interp": {
+      "PM2.5": 0.020902254924328845,
+      "PM10": 0.015459825842269374,
+      "SO2": 0.021572457981595558,
+      "NO2": 0.02892805536542703,
+      "CO": 0.049331222906684916,
+      "O3": 0.031684919005247544,
+      "TEMP": 0.0010789793900676857,
+      "PRES": 0.001067096357137425,
+      "DEWP": 0.0010908624229979465,
+      "RAIN": 0.0010599665373792683,
+      "WSPM": 0.000888850863183512
+    },
+    "missing_rate_after_interp": {
+      "PM2.5": 0.010580652521104267,
+      "PM10": 0.0073769868431059395,
+      "SO2": 0.012096927523005552,
+      "NO2": 0.016500779526960226,
+      "CO": 0.03348163358430299,
+      "O3": 0.017299319339873755,
+      "TEMP": 1.66362461023652e-05,
+      "PRES": 1.66362461023652e-05,
+      "DEWP": 1.66362461023652e-05,
+      "RAIN": 0.0010599665373792683,
+      "WSPM": 0.0
+    },
+    "pm25_gt_pm10_rate_among_pairs": 0.049699215799609966,
+    "pm25_gt_pm10_rows": 20464,
+    "rules": {
+      "unparseable_datetime": 0,
+      "sentinel_9999": 56,
+      "PM2.5_negative": 0,
+      "PM10_negative": 0,
+      "SO2_negative": 0,
+      "NO2_negative": 0,
+      "CO_negative": 0,
+      "O3_negative": 0,
+      "RAIN_negative": 0,
+      "WSPM_negative": 0,
+      "TEMP_out_of_range": 0,
+      "PRES_out_of_range": 0,
+      "DEWP_out_of_range": 0,
+      "DEWP_above_TEMP": 0,
+      "WSPM_above_40": 0
+    }
+  },
+  "pm25": {
+    "city_valid_days": 1458,
+    "mean": 79.4,
+    "winter_mean": 94.2,
+    "summer_mean": 64.6,
+    "winter_days": 359,
+    "summer_days": 368,
+    "winter_summer_ratio": 1.46,
+    "highest_station": "东四",
+    "highest_value": 86.0,
+    "highest_days": 1432,
+    "lowest_station": "定陵",
+    "lowest_value": 65.7,
+    "lowest_days": 1431,
+    "stations": [
+      {
+        "station": "Dongsi",
+        "zh": "东四",
+        "zone": "城区",
+        "value": 86.0,
+        "n_days": 1432
+      },
+      {
+        "station": "Nongzhanguan",
+        "zh": "农展馆",
+        "zone": "城区",
+        "value": 84.8,
+        "n_days": 1440
+      },
+      {
+        "station": "Wanshouxigong",
+        "zh": "万寿西宫",
+        "zone": "城区",
+        "value": 84.4,
+        "n_days": 1432
+      },
+      {
+        "station": "Gucheng",
+        "zh": "古城",
+        "zone": "城区",
+        "value": 83.5,
+        "n_days": 1438
+      },
+      {
+        "station": "Wanliu",
+        "zh": "万柳",
+        "zone": "城区",
+        "value": 83.2,
+        "n_days": 1450
+      },
+      {
+        "station": "Guanyuan",
+        "zh": "官园",
+        "zone": "城区",
+        "value": 82.8,
+        "n_days": 1438
+      },
+      {
+        "station": "Aotizhongxin",
+        "zh": "奥体中心",
+        "zone": "城区",
+        "value": 82.7,
+        "n_days": 1427
+      },
+      {
+        "station": "Tiantan",
+        "zh": "天坛",
+        "zone": "城区",
+        "value": 81.8,
+        "n_days": 1448
+      },
+      {
+        "station": "Shunyi",
+        "zh": "顺义",
+        "zone": "郊区",
+        "value": 79.1,
+        "n_days": 1426
+      },
+      {
+        "station": "Changping",
+        "zh": "昌平",
+        "zone": "郊区",
+        "value": 70.8,
+        "n_days": 1433
+      },
+      {
+        "station": "Huairou",
+        "zh": "怀柔",
+        "zone": "郊区",
+        "value": 69.4,
+        "n_days": 1424
+      },
+      {
+        "station": "Dingling",
+        "zh": "定陵",
+        "zone": "背景点",
+        "value": 65.7,
+        "n_days": 1431
+      }
+    ],
+    "days_over_75": 584,
+    "over_75_rate": 0.401,
+    "days_over_150": 174,
+    "over_150_rate": 0.119,
+    "categories": {
+      "优": 413,
+      "良": 461,
+      "轻度污染": 258,
+      "中度污染": 152,
+      "重度污染": 129,
+      "严重污染": 45
+    },
+    "years": [
+      {
+        "year": 2013,
+        "mean": 79.9,
+        "n_days": 306,
+        "complete": false
+      },
+      {
+        "year": 2014,
+        "mean": 84.5,
+        "n_days": 363,
+        "complete": true
+      },
+      {
+        "year": 2015,
+        "mean": 79.3,
+        "n_days": 365,
+        "complete": true
+      },
+      {
+        "year": 2016,
+        "mean": 71.8,
+        "n_days": 365,
+        "complete": true
+      },
+      {
+        "year": 2017,
+        "mean": 92.5,
+        "n_days": 59,
+        "complete": false
+      }
+    ],
+    "month_high": {
+      "month": 12,
+      "mean": 103.9
+    },
+    "month_low": {
+      "month": 8,
+      "mean": 53.5
+    },
+    "corr_wspm": {
+      "r": -0.4279040318175067,
+      "p": 5.570007435162038e-66,
+      "n": 1458
+    },
+    "corr_dewp": {
+      "r": 0.08051602063448195,
+      "p": 0.0020926066693464427,
+      "n": 1458
+    },
+    "corr_temp": {
+      "r": -0.15511208906618115,
+      "p": 2.6206375937302164e-09,
+      "n": 1458
+    },
+    "diurnal_peak": {
+      "hour": 22,
+      "value": 89.0
+    },
+    "diurnal_trough": {
+      "hour": 7,
+      "value": 73.3
+    },
+    "weekday_mean": 77.6,
+    "weekend_mean": 83.8,
+    "episode_threshold": 150.0,
+    "episode_count": 84,
+    "episode_days": 174,
+    "episode_wspm": 1.21,
+    "all_wspm": 1.73,
+    "episode_dewp": 1.31,
+    "all_dewp": 2.48,
+    "top_episodes": [
+      {
+        "start": "2015-11-27",
+        "end": "2015-12-01",
+        "days": 5,
+        "peak": 472.9288194444444,
+        "peak_date": "2015-12-01",
+        "mean": 294.43819444444443,
+        "wspm": 1.0946875,
+        "dewp": -5.1071180555555555,
+        "temp": -1.6163541666666668
+      },
+      {
+        "start": "2015-12-25",
+        "end": "2015-12-26",
+        "days": 2,
+        "peak": 465.1302083333333,
+        "peak_date": "2015-12-25",
+        "mean": 378.1328125,
+        "wspm": 1.3947916666666664,
+        "dewp": -4.926041666666666,
+        "temp": -3.204947916666667
+      },
+      {
+        "start": "2016-12-30",
+        "end": "2017-01-07",
+        "days": 9,
+        "peak": 441.8854166666667,
+        "peak_date": "2017-01-01",
+        "mean": 260.48968855218857,
+        "wspm": 1.080697601010101,
+        "dewp": -6.3541719276094275,
+        "temp": -0.8385364057239058
+      },
+      {
+        "start": "2014-02-13",
+        "end": "2014-02-16",
+        "days": 4,
+        "peak": 395.72222222222223,
+        "peak_date": "2014-02-15",
+        "mean": 286.9982638888889,
+        "wspm": 1.2079166666666667,
+        "dewp": -7.112760416666666,
+        "temp": -1.3454861111111112
+      },
+      {
+        "start": "2016-12-17",
+        "end": "2016-12-21",
+        "days": 5,
+        "peak": 395.109375,
+        "peak_date": "2016-12-21",
+        "mean": 275.9270833333333,
+        "wspm": 0.9345833333333333,
+        "dewp": -5.188888888888888,
+        "temp": -0.1069444444444444
+      },
+      {
+        "start": "2014-01-15",
+        "end": "2014-01-17",
+        "days": 3,
+        "peak": 342.70659722222223,
+        "peak_date": "2014-01-16",
+        "mean": 219.2266865079365,
+        "wspm": 1.4068287037037035,
+        "dewp": -10.647685185185185,
+        "temp": -0.7763888888888887
+      },
+      {
+        "start": "2017-01-28",
+        "end": "2017-01-28",
+        "days": 1,
+        "peak": 338.51388888888886,
+        "peak_date": "2017-01-28",
+        "mean": 338.51388888888886,
+        "wspm": 1.3687500000000001,
+        "dewp": -11.011458333333332,
+        "temp": -1.40734375
+      },
+      {
+        "start": "2014-10-08",
+        "end": "2014-10-11",
+        "days": 4,
+        "peak": 328.59999999999997,
+        "peak_date": "2014-10-09",
+        "mean": 269.5678898358586,
+        "wspm": 0.9585148358585858,
+        "dewp": 12.975757575757575,
+        "temp": 16.080389835858586
+      }
+    ]
+  },
+  "pollutants": [
+    {
+      "name": "PM2.5",
+      "mean": 79.4,
+      "unit": "μg/m³",
+      "agg": "daily_mean",
+      "limit": 75.0,
+      "n": 1458,
+      "n_over": 584,
+      "rate": 0.40054869684499317
+    },
+    {
+      "name": "PM10",
+      "mean": 104.5,
+      "unit": "μg/m³",
+      "agg": "daily_mean",
+      "limit": 150.0,
+      "n": 1458,
+      "n_over": 292,
+      "rate": 0.20027434842249658
+    },
+    {
+      "name": "SO2",
+      "mean": 15.8,
+      "unit": "μg/m³",
+      "agg": "daily_mean",
+      "limit": 150.0,
+      "n": 1458,
+      "n_over": 0,
+      "rate": 0.0
+    },
+    {
+      "name": "NO2",
+      "mean": 50.5,
+      "unit": "μg/m³",
+      "agg": "daily_mean",
+      "limit": 80.0,
+      "n": 1458,
+      "n_over": 183,
+      "rate": 0.12551440329218108
+    },
+    {
+      "name": "CO",
+      "mean": 1228.0,
+      "unit": "μg/m³",
+      "agg": "daily_mean",
+      "limit": 4000.0,
+      "n": 1434,
+      "n_over": 28,
+      "rate": 0.019525801952580194
+    },
+    {
+      "name": "O3",
+      "mean": 99.9,
+      "unit": "μg/m³",
+      "agg": "mda8",
+      "limit": 160.0,
+      "n": 1454,
+      "n_over": 296,
+      "rate": 0.20357634112792297
+    }
+  ],
+  "cluster": {
+    "k": 2,
+    "silhouette": 0.453,
+    "silhouette_by_k": {
+      "2": 0.453,
+      "3": 0.247,
+      "4": 0.292,
+      "5": 0.323
+    },
+    "used_winter_summer_ratio": true,
+    "members": {
+      "较高组": [
+        "奥体中心",
+        "昌平",
+        "东四",
+        "官园",
+        "古城",
+        "农展馆",
+        "顺义",
+        "天坛",
+        "万柳",
+        "万寿西宫"
+      ],
+      "较低组": [
+        "定陵",
+        "怀柔"
+      ]
+    },
+    "feature_columns": [
+      "PM2.5",
+      "PM10",
+      "SO2",
+      "NO2",
+      "CO",
+      "O3",
+      "WSPM",
+      "pm25_winter_summer_ratio"
+    ]
+  },
+  "loocv": {
+    "ok": true,
+    "n": 12,
+    "power": 2.0,
+    "idw_rmse": 3.81,
+    "idw_mae": 2.47,
+    "nn_rmse": 4.73,
+    "nn_mae": 3.56
+  }
+}
