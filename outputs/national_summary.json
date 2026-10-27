@@ -1,0 +1,597 @@
+{
+  "source": {
+    "name": "全国城市空气质量小时数据",
+    "page": "https://quotsoft.net/air/",
+    "url_template": "https://quotsoft.net/air/data/china_cities_YYYYMMDD.csv",
+    "upstream": "中国环境监测总站全国城市空气质量实时发布平台",
+    "license_note": "发布页写明欢迎分析研究，没有 SPDX 许可证。本仓库不收录原始逐小时文件。"
+  },
+  "crs_note": "城市代表点来自和风天气公开城市列表的 Latitude/Longitude。列表页没有单列坐标系名称。北京点（约 39.905°N, 116.405°E）与常见 WGS84 城市中心在数百米内，分析按 WGS84 城市代表点使用，不是监测站坐标。",
+  "gazetteer": "https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv",
+  "period": {
+    "start": "2023-01-01",
+    "end": "2024-12-31",
+    "n_dates_present": 730,
+    "n_missing_dates": 1,
+    "missing_dates": [
+      "2023-10-02"
+    ]
+  },
+  "coverage": {
+    "n_cities_in_files": 375,
+    "n_cities_matched": 371,
+    "n_cities_unmatched": 4,
+    "unmatched_cities": [
+      "兰州新区",
+      "胶南",
+      "西咸新区",
+      "赣江新区"
+    ],
+    "n_cities_in_moran": 339,
+    "min_days_for_city_mean": 200,
+    "daily_rule": "当天该指标至少 18 个有效小时才保留日均",
+    "sentinel_rule": "负值，以及 PM2.5>3000、CO>50 mg/m³、AQI>2000 等哨兵上限，不进入日均"
+  },
+  "pm25": {
+    "city_day_mean": 31.2,
+    "city_equal_mean": 31.1,
+    "n_city_days": 247174,
+    "winter_mean": 48.4,
+    "summer_mean": 17.2,
+    "winter_n": 60593,
+    "summer_n": 62363,
+    "winter_summer_ratio": 2.81,
+    "days_over_75": 15100,
+    "share_over_75": 0.061,
+    "highest": [
+      {
+        "city": "和田地区",
+        "province": "新疆维吾尔自治区",
+        "region": "西北",
+        "mean": 88.6,
+        "n_days": 724
+      },
+      {
+        "city": "喀什地区",
+        "province": "新疆维吾尔自治区",
+        "region": "西北",
+        "mean": 67.5,
+        "n_days": 724
+      },
+      {
+        "city": "克孜勒苏柯尔克孜自治州",
+        "province": "新疆维吾尔自治区",
+        "region": "西北",
+        "mean": 55.3,
+        "n_days": 719
+      },
+      {
+        "city": "阿克苏地区",
+        "province": "新疆维吾尔自治区",
+        "region": "西北",
+        "mean": 54.2,
+        "n_days": 725
+      },
+      {
+        "city": "咸阳",
+        "province": "陕西省",
+        "region": "西北",
+        "mean": 51.7,
+        "n_days": 725
+      },
+      {
+        "city": "安阳",
+        "province": "河南省",
+        "region": "其他",
+        "mean": 51.6,
+        "n_days": 725
+      },
+      {
+        "city": "五家渠",
+        "province": "新疆维吾尔自治区",
+        "region": "西北",
+        "mean": 50.5,
+        "n_days": 724
+      },
+      {
+        "city": "鹤壁",
+        "province": "河南省",
+        "region": "其他",
+        "mean": 50.2,
+        "n_days": 724
+      }
+    ],
+    "lowest": [
+      {
+        "city": "阿里地区",
+        "province": "西藏自治区",
+        "region": "其他",
+        "mean": 6.0,
+        "n_days": 724
+      },
+      {
+        "city": "林芝",
+        "province": "西藏自治区",
+        "region": "其他",
+        "mean": 6.1,
+        "n_days": 722
+      },
+      {
+        "city": "玉树藏族自治州",
+        "province": "青海省",
+        "region": "西北",
+        "mean": 7.0,
+        "n_days": 685
+      },
+      {
+        "city": "甘孜藏族自治州",
+        "province": "四川省",
+        "region": "成渝",
+        "mean": 7.7,
+        "n_days": 718
+      },
+      {
+        "city": "阿勒泰地区",
+        "province": "新疆维吾尔自治区",
+        "region": "西北",
+        "mean": 8.0,
+        "n_days": 722
+      },
+      {
+        "city": "昌都",
+        "province": "西藏自治区",
+        "region": "其他",
+        "mean": 9.0,
+        "n_days": 724
+      },
+      {
+        "city": "山南",
+        "province": "西藏自治区",
+        "region": "其他",
+        "mean": 9.3,
+        "n_days": 724
+      },
+      {
+        "city": "日喀则",
+        "province": "西藏自治区",
+        "region": "其他",
+        "mean": 9.5,
+        "n_days": 724
+      }
+    ]
+  },
+  "years": {
+    "2023": {
+      "city_day_mean": 32.0,
+      "city_equal_mean": 31.9,
+      "n_city_days": 123468,
+      "n_cities": 342
+    },
+    "2024": {
+      "city_day_mean": 30.4,
+      "city_equal_mean": 30.4,
+      "n_city_days": 123706,
+      "n_cities": 342
+    }
+  },
+  "year_change": {
+    "from_year": 2023,
+    "to_year": 2024,
+    "from_mean": 32.0,
+    "to_mean": 30.4,
+    "delta": -1.6
+  },
+  "lisa_by_region": [
+    {
+      "region": "其他",
+      "n": 177,
+      "hh": 30,
+      "ll": 38,
+      "hl": 0,
+      "lh": 1
+    },
+    {
+      "region": "华北",
+      "n": 37,
+      "hh": 13,
+      "ll": 0,
+      "hl": 0,
+      "lh": 0
+    },
+    {
+      "region": "成渝",
+      "n": 22,
+      "hh": 0,
+      "ll": 0,
+      "hl": 0,
+      "lh": 0
+    },
+    {
+      "region": "珠三角",
+      "n": 9,
+      "hh": 0,
+      "ll": 7,
+      "hl": 0,
+      "lh": 0
+    },
+    {
+      "region": "西北",
+      "n": 53,
+      "hh": 7,
+      "ll": 2,
+      "hl": 0,
+      "lh": 1
+    },
+    {
+      "region": "长三角",
+      "n": 41,
+      "hh": 6,
+      "ll": 0,
+      "hl": 0,
+      "lh": 0
+    }
+  ],
+  "regions": [
+    {
+      "region": "华北",
+      "mean": 34.5,
+      "winter_mean": 47.7,
+      "summer_mean": 21.5,
+      "winter_summer_ratio": 2.22,
+      "n_city_days": 26781,
+      "n_cities": 37
+    },
+    {
+      "region": "长三角",
+      "mean": 32.5,
+      "winter_mean": 52.0,
+      "summer_mean": 18.0,
+      "winter_summer_ratio": 2.89,
+      "n_city_days": 29710,
+      "n_cities": 41
+    },
+    {
+      "region": "珠三角",
+      "mean": 20.5,
+      "winter_mean": 29.2,
+      "summer_mean": 11.7,
+      "winter_summer_ratio": 2.5,
+      "n_city_days": 6525,
+      "n_cities": 9
+    },
+    {
+      "region": "成渝",
+      "mean": 31.9,
+      "winter_mean": 56.4,
+      "summer_mean": 17.8,
+      "winter_summer_ratio": 3.18,
+      "n_city_days": 15905,
+      "n_cities": 22
+    },
+    {
+      "region": "西北",
+      "mean": 34.7,
+      "winter_mean": 55.1,
+      "summer_mean": 20.0,
+      "winter_summer_ratio": 2.76,
+      "n_city_days": 38191,
+      "n_cities": 53
+    }
+  ],
+  "region_seasons": [
+    {
+      "region": "华北",
+      "season": "春",
+      "mean": 36.8,
+      "n_city_days": 6808,
+      "n_cities": 37
+    },
+    {
+      "region": "华北",
+      "season": "夏",
+      "mean": 21.5,
+      "n_city_days": 6761,
+      "n_cities": 37
+    },
+    {
+      "region": "华北",
+      "season": "秋",
+      "mean": 32.4,
+      "n_city_days": 6659,
+      "n_cities": 37
+    },
+    {
+      "region": "华北",
+      "season": "冬",
+      "mean": 47.7,
+      "n_city_days": 6553,
+      "n_cities": 37
+    },
+    {
+      "region": "长三角",
+      "season": "春",
+      "mean": 33.1,
+      "n_city_days": 7543,
+      "n_cities": 41
+    },
+    {
+      "region": "长三角",
+      "season": "夏",
+      "mean": 18.0,
+      "n_city_days": 7490,
+      "n_cities": 41
+    },
+    {
+      "region": "长三角",
+      "season": "秋",
+      "mean": 27.4,
+      "n_city_days": 7379,
+      "n_cities": 41
+    },
+    {
+      "region": "长三角",
+      "season": "冬",
+      "mean": 52.0,
+      "n_city_days": 7298,
+      "n_cities": 41
+    },
+    {
+      "region": "珠三角",
+      "season": "春",
+      "mean": 21.2,
+      "n_city_days": 1656,
+      "n_cities": 9
+    },
+    {
+      "region": "珠三角",
+      "season": "夏",
+      "mean": 11.7,
+      "n_city_days": 1647,
+      "n_cities": 9
+    },
+    {
+      "region": "珠三角",
+      "season": "秋",
+      "mean": 20.1,
+      "n_city_days": 1620,
+      "n_cities": 9
+    },
+    {
+      "region": "珠三角",
+      "season": "冬",
+      "mean": 29.2,
+      "n_city_days": 1602,
+      "n_cities": 9
+    },
+    {
+      "region": "成渝",
+      "season": "春",
+      "mean": 28.2,
+      "n_city_days": 4043,
+      "n_cities": 22
+    },
+    {
+      "region": "成渝",
+      "season": "夏",
+      "mean": 17.8,
+      "n_city_days": 4006,
+      "n_cities": 22
+    },
+    {
+      "region": "成渝",
+      "season": "秋",
+      "mean": 25.9,
+      "n_city_days": 3940,
+      "n_cities": 22
+    },
+    {
+      "region": "成渝",
+      "season": "冬",
+      "mean": 56.4,
+      "n_city_days": 3916,
+      "n_cities": 22
+    },
+    {
+      "region": "西北",
+      "season": "春",
+      "mean": 37.5,
+      "n_city_days": 9711,
+      "n_cities": 53
+    },
+    {
+      "region": "西北",
+      "season": "夏",
+      "mean": 20.0,
+      "n_city_days": 9635,
+      "n_cities": 53
+    },
+    {
+      "region": "西北",
+      "season": "秋",
+      "mean": 26.5,
+      "n_city_days": 9445,
+      "n_cities": 53
+    },
+    {
+      "region": "西北",
+      "season": "冬",
+      "mean": 55.1,
+      "n_city_days": 9400,
+      "n_cities": 53
+    }
+  ],
+  "moran_period_mean": {
+    "ok": true,
+    "n": 339,
+    "k": 8,
+    "weight": "k 近邻，k=8，行标准化，不含自身",
+    "I": 0.589,
+    "expected": -0.003,
+    "p_value": 0.001,
+    "n_permutations": 999,
+    "seed": 42,
+    "lisa_counts": {
+      "高-高": 56,
+      "低-低": 47,
+      "高-低": 0,
+      "低-高": 2,
+      "不显著": 234
+    },
+    "lisa_alpha": 0.05,
+    "lisa_note": "局部 p 值未做多重比较校正",
+    "inverse_distance_400km": {
+      "ok": true,
+      "cutoff_km": 400,
+      "n": 337,
+      "I": 0.679,
+      "expected": -0.003,
+      "p_value": 0.001,
+      "dropped_isolated": 2
+    }
+  },
+  "moran_winter_mean": {
+    "ok": true,
+    "n": 339,
+    "k": 8,
+    "weight": "k 近邻，k=8，行标准化，不含自身",
+    "I": 0.621,
+    "expected": -0.003,
+    "p_value": 0.001,
+    "n_permutations": 999,
+    "seed": 42,
+    "lisa_counts": {
+      "高-高": 67,
+      "低-低": 54,
+      "高-低": 0,
+      "低-高": 3,
+      "不显著": 215
+    },
+    "lisa_alpha": 0.05,
+    "lisa_note": "局部 p 值未做多重比较校正",
+    "inverse_distance_400km": {
+      "ok": true,
+      "cutoff_km": 400,
+      "n": 337,
+      "I": 0.683,
+      "expected": -0.003,
+      "p_value": 0.001,
+      "dropped_isolated": 2
+    }
+  },
+  "moran_summer_mean": {
+    "ok": true,
+    "n": 339,
+    "k": 8,
+    "weight": "k 近邻，k=8，行标准化，不含自身",
+    "I": 0.381,
+    "expected": -0.003,
+    "p_value": 0.001,
+    "n_permutations": 999,
+    "seed": 42,
+    "lisa_counts": {
+      "高-高": 50,
+      "低-低": 53,
+      "高-低": 0,
+      "低-高": 1,
+      "不显著": 235
+    },
+    "lisa_alpha": 0.05,
+    "lisa_note": "局部 p 值未做多重比较校正",
+    "inverse_distance_400km": {
+      "ok": true,
+      "cutoff_km": 400,
+      "n": 337,
+      "I": 0.665,
+      "expected": -0.003,
+      "p_value": 0.001,
+      "dropped_isolated": 2
+    }
+  },
+  "interpolation": {
+    "national_idw": false,
+    "national_kriging": false,
+    "reason": "全国点是城市代表点，间距经常超过 100 公里。样本量够拟合一个变异函数，但数据支撑是整座城市，插成连续面会被看成街道尺度的污染场。北京 12 站在约 50 公里内，IDW 只保留距最近站 40 公里以内的格点。"
+  },
+  "model": {
+    "task": "用前一日及更早的信息预测当日城市 PM2.5",
+    "model": "sklearn HistGradientBoostingRegressor",
+    "features": [
+      "lag1",
+      "lag7",
+      "spatial_lag1",
+      "month_sin",
+      "month_cos",
+      "dow",
+      "lat",
+      "lon"
+    ],
+    "cutoff": "2024-06-28",
+    "train_start": "2023-01-08",
+    "train_end": "2024-06-27",
+    "test_start": "2024-06-28",
+    "test_end": "2024-12-30",
+    "n_train": 178707,
+    "n_test": 59893,
+    "n_cities": 339,
+    "train_mae": 9.48,
+    "train_rmse": 17.17,
+    "test_mae": 8.02,
+    "test_rmse": 13.72,
+    "persist_mae": 8.31,
+    "persist_rmse": 14.29,
+    "importance_sample_n": 12000,
+    "importance": [
+      {
+        "feature": "lag1",
+        "label": "昨日 PM2.5",
+        "mae_increase": 5.972,
+        "mae_increase_std": 0.031
+      },
+      {
+        "feature": "month_cos",
+        "label": "月份余弦",
+        "mae_increase": 0.603,
+        "mae_increase_std": 0.029
+      },
+      {
+        "feature": "lon",
+        "label": "经度",
+        "mae_increase": 0.351,
+        "mae_increase_std": 0.022
+      },
+      {
+        "feature": "lat",
+        "label": "纬度",
+        "mae_increase": 0.228,
+        "mae_increase_std": 0.016
+      },
+      {
+        "feature": "spatial_lag1",
+        "label": "邻近城市昨日 PM2.5",
+        "mae_increase": 0.174,
+        "mae_increase_std": 0.015
+      },
+      {
+        "feature": "lag7",
+        "label": "7 日前 PM2.5",
+        "mae_increase": 0.148,
+        "mae_increase_std": 0.012
+      },
+      {
+        "feature": "dow",
+        "label": "星期",
+        "mae_increase": -0.031,
+        "mae_increase_std": 0.014
+      },
+      {
+        "feature": "month_sin",
+        "label": "月份正弦",
+        "mae_increase": -0.083,
+        "mae_increase_std": 0.006
+      }
+    ],
+    "seed": 42,
+    "mae_improvement_vs_persist": 0.035
+  },
+  "scale_note": "全国结果是监测城市的日尺度；北京案例是 12 个国控站的小时尺度。两套数字不能直接相减。"
+}

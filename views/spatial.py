@@ -10,9 +10,9 @@ from src.mapping import attach_coordinates, build_map
 from src.metrics import station_means
 from src.settings import IDW_POWER, STANDARDS, value_column
 from src.spatial import loocv_idw_nn
-from src.ui import empty_state, filtered, get_filters, hero
+from src.ui import empty_state, filtered, hero, prepare_beijing
 
-state = get_filters()
+state = prepare_beijing()
 hero("空间分布", "站点位置、分区差异，以及用站点均值做的逆距离加权和最近邻对比。")
 
 if not state.ok:

@@ -8,7 +8,7 @@ import streamlit as st
 
 from src.metrics import city_daily, exceedance, format_number, station_means
 from src.settings import STANDARDS, station_zh, value_column
-from src.ui import cards, empty_state, filtered, get_filters, hero, level_color, load_daily, read_findings
+from src.ui import cards, empty_state, filtered, hero, level_color, load_daily, prepare_beijing, read_findings
 
 
 def _delta_text(current: float, baseline: float | None, pollutant: str) -> str:
@@ -40,8 +40,9 @@ def _sentences(pollutant, unit, mean_value, n_days, peak_value, peak_date, high_
     return sentences
 
 
-state = get_filters()
-hero("城市空气质量总览", "按站点、年份、日期和污染物重算浓度、超标天数和站点差异。")
+state = prepare_beijing()
+hero("北京 12 站总览", "按站点、年份、日期和污染物重算浓度、超标天数和站点差异。")
+st.caption("这一页仍是 2013–2017 年北京 12 个国控站的小时数据。它和「全国格局」的城市日值不是同一套数据，年份也不同，两边的数字不该对得上。")
 
 if not state.ok:
     empty_state(state.reason)

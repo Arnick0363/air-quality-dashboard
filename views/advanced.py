@@ -12,9 +12,9 @@ from src.figures import setup_font
 from src.metrics import city_daily, correlation_matrix, find_episodes, pearson
 from src.settings import EPISODE_PM25, METEO, POLLUTANTS, STANDARDS, WIND_ORDER, value_column
 from src.spatial import cluster_stations, draw_dendrogram
-from src.ui import empty_state, filtered, get_filters, hero, show_pyplot
+from src.ui import empty_state, filtered, hero, prepare_beijing, show_pyplot
 
-state = get_filters()
+state = prepare_beijing()
 hero("聚类与关联", "看污染物和气象量的关系、站点分组，以及连续超标过程。")
 
 if not state.ok:

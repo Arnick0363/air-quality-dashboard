@@ -49,21 +49,28 @@ def inject_css() -> None:
         .stat-label {color: #5C6B73; font-size: 0.82rem;}
         .stat-value {color: #1C2830; font-size: 1.55rem; font-weight: 680; letter-spacing: -0.03em; margin-top: 2px;}
         .stat-note {color: #6D7C84; font-size: 0.78rem; margin-top: 4px; line-height: 1.35;}
+        .story-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 0 0 16px;}
+        .story-body {color: #1C2830; font-size: 0.95rem; line-height: 1.45; margin-top: 4px;}
         .empty-box, .error-box {border-radius: 12px; padding: 18px 18px 14px; margin: 8px 0 16px;}
         .empty-box {background: #F4F1E8; border: 1px dashed #C8BFAE;}
         .error-box {background: #FDECEC; border: 1px solid #F0C2C2;}
         .empty-box h3, .error-box h3 {margin: 0 0 6px 0; color: #1C2830; font-size: 1.05rem;}
         .section-note {color: #5C6B73; font-size: 0.9rem;}
         div[data-testid="stSidebar"] {background: #F7F5F0;}
+        @media (max-width: 780px) {
+          .hero-title {font-size: 1.35rem;}
+          .stat-value {font-size: 1.28rem;}
+          .block-container {padding-left: 0.7rem; padding-right: 0.7rem;}
+        }
         </style>
         """,
         unsafe_allow_html=True,
     )
 
 
-def hero(title: str, subtitle: str) -> None:
+def hero(title: str, subtitle: str, kicker: str = "北京站点 · 小时尺度 · 2013–2017") -> None:
     st.markdown(
-        f'<div class="hero-kicker">北京 · 12 个国控站点 · 2013–2017</div>'
+        f'<div class="hero-kicker">{kicker}</div>'
         f'<h1 class="hero-title">{title}</h1>'
         f'<p class="hero-sub">{subtitle}</p>',
         unsafe_allow_html=True,
@@ -133,25 +140,25 @@ def load_daily():
 def render_sidebar(hourly: pd.DataFrame) -> FilterState:
     st.sidebar.header("筛选")
     st.sidebar.caption("城市只有北京。年份和日期同时生效，结果取二者交集。")
-    st.sidebar.selectbox("城市", ["北京"], key="city")
+    st.sidebar.selectbox("城市", ["北京"], key="bj_city")
     years = sorted(int(year) for year in hourly["year"].unique())
-    chosen_years = st.sidebar.multiselect("年份", years, default=years, key="years", placeholder="请选择年份")
+    chosen_years = st.sidebar.multiselect("年份", years, default=years, key="bj_years", placeholder="请选择年份")
     station_ids = sorted(STATIONS, key=station_zh)
     chosen_stations = st.sidebar.multiselect(
         "站点",
         station_ids,
         default=station_ids,
         format_func=station_zh,
-        key="stations",
+        key="bj_stations",
         placeholder="请选择站点",
     )
     pollutant = st.sidebar.selectbox(
         "污染物",
         POLLUTANTS,
         format_func=lambda name: f"{name}（{STANDARDS[name]['unit']}）",
-        key="pollutant",
+        key="bj_pollutant",
     )
-    season_mode = st.sidebar.radio("季节范围", ["全年", "冬", "夏"], horizontal=True, key="season_mode")
+    season_mode = st.sidebar.radio("季节范围", ["全年", "冬", "夏"], horizontal=True, key="bj_season_mode")
     min_date = hourly["datetime"].min().date()
     max_date = hourly["datetime"].max().date()
     picked = st.sidebar.date_input(
@@ -159,7 +166,7 @@ def render_sidebar(hourly: pd.DataFrame) -> FilterState:
         value=(min_date, max_date),
         min_value=min_date,
         max_value=max_date,
-        key="date_range",
+        key="bj_date_range",
     )
     st.sidebar.caption(
         f"全库 {len(hourly):,} 条小时记录 · {hourly['station'].nunique()} 站 · "
@@ -181,6 +188,16 @@ def render_sidebar(hourly: pd.DataFrame) -> FilterState:
     if start is None or end is None or start > end:
         return FilterState(False, "date", chosen_stations, chosen_years, start, end, season_mode, pollutant)
     return FilterState(True, "", chosen_stations, chosen_years, start, end, season_mode, pollutant)
+
+
+def prepare_beijing() -> FilterState:
+    hourly = load_hourly()
+    if hourly is None:
+        missing_data_page()
+        st.stop()
+    state = render_sidebar(hourly)
+    st.session_state["filter_state"] = state
+    return state
 
 
 def get_filters() -> FilterState:

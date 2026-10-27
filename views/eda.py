@@ -8,9 +8,9 @@ import streamlit as st
 
 from src.metrics import city_daily, diurnal_profile, station_means
 from src.settings import SEASON_ORDER, STANDARDS, station_zh, value_column
-from src.ui import empty_state, filtered, get_filters, hero
+from src.ui import empty_state, filtered, hero, prepare_beijing
 
-state = get_filters()
+state = prepare_beijing()
 hero("趋势与季节", "看月际变化、季节差、一天里的起伏，以及站与站的差别。")
 
 if not state.ok:
